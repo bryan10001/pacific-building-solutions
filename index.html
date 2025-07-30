@@ -1,249 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pacific Building Solutions offers professional final cleaning, puff cleaning, and rough cleaning services in the DFW Metroplex, including Fort Worth, Arlington, Dallas, and more. Get a free quote today!">
-    <meta name="keywords" content="final cleaning, puff cleaning, rough cleaning, cleaning services, DFW Metroplex, Fort Worth, Arlington, Dallas, Frisco, Plano, McKinney">
-    <title>Pacific Building Solutions</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f4f4f4;
-        }
-        header {
-            background: #1C2526;
-            color: #7FB3D5;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-        header img {
-            max-width: 200px;
-            margin-bottom: 1rem;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #3498DB;
-        }
-        nav {
-            background: #3498DB;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav ul li {
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: #1C2526;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        nav ul li a:hover {
-            color: #7FB3D5;
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .section {
-            margin-bottom: 3rem;
-        }
-        .section h2 {
-            color: #1C2526;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        .services-grid, .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .service-card, .review-card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .service-card h3 {
-            color: #3498DB;
-        }
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .form-container input, .form-container textarea, .form-container select {
-            width: 100%;
-            padding: 0.75rem;
-            margin: 0.5rem 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .form-container input[type="file"] {
-            padding: 0.2rem;
-        }
-        .form-container .checkbox-container {
-            margin: 1rem 0;
-            text-align: left;
-        }
-        .form-container button {
-            background: #3498DB;
-            color: #1C2526;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .form-container button:hover {
-            background: #7FB3D5;
-        }
-        .story-content {
-            background: #ecf0f1;
-            padding: 2rem;
-            border-radius: 8px;
-        }
-        footer {
-            background: #1C2526;
-            color: #7FB3D5;
-            text-align: center;
-            padding: 1rem;
-            width: 100%;
-        }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            nav ul li {
-                margin: 0.5rem;
-            }
-            .container {
-                padding: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacific Building Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --slate-blue-grey: #7C9BA8;
+      --warm-beige: #E6DCCD;
+      --taupe-gray: #B0A89C;
+      --rich-black: #111111;
+      --classic-white: #FFFFFF;
+      --soft-steel-blue: #8AA3AF;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: var(--warm-beige);
+      color: var(--rich-black);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--rich-black);
+    }
+
+    header {
+      background-color: var(--rich-black);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+    }
+
+    .logo {
+      width: 160px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--classic-white);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--taupe-gray);
+    }
+    
+    .book-button {
+      background-color: var(--classic-white);
+      color: var(--rich-black);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .hero {
+      position: relative;
+      background-image: url('your-cleaning-image.jpg'); /* Replace this */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-overlay {
+      background-color: rgba(17, 17, 17, 0.7);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-content {
+      z-index: 1;
+      max-width: 700px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: var(--classic-white);
+    }
+
+    .hero-content p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      color: var(--warm-beige);
+    }
+
+    .hero-button {
+      background-color: var(--taupe-gray);
+      color: var(--classic-white);
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .marquee {
+      background-color: var(--rich-black);
+      color: var(--taupe-gray);
+      font-size: 1.8em;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .services {
+      background-color: var(--warm-beige);
+      border-top: 2px solid var(--soft-steel-blue);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .services img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .cta {
+      background-color: var(--soft-steel-blue);
+      text-align: center;
+      color: var(--rich-black);
+    }
+
+    .cta button {
+      background-color: var(--taupe-gray);
+      border: none;
+      padding: 12px 24px;
+      color: white;
+      font-size: 1em;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .ethos {
+      background-color: var(--slate-blue-grey);
+      color: var(--classic-white);
+    }
+
+    .contact-form {
+      background-color: var(--rich-black);
+      color: var(--classic-white);
+      padding: 60px 20px;
+    }
+
+    .contact-form h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--classic-white);
+    }
+
+    .contact-form form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      background-color: #2a2a2a;
+      border: 1px solid var(--soft-steel-blue);
+      color: var(--classic-white);
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      background-color: var(--soft-steel-blue);
+      color: var(--rich-black);
+      border: none;
+      padding: 12px 24px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    footer {
+      background-color: var(--rich-black);
+      color: var(--classic-white);
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="pbs-logo.png" alt="Pacific Building Solutions Logo" style="max-width: 200px; margin-bottom: 1rem;">
-        <h1>Pacific Building Solutions</h1>
-        <p>Professional Cleaning Services in the DFW Metroplex</p>
-    </header>
+  <header>
+    <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Pacific Building Solutions Logo" class="logo" />
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#quote">Get a Quote</a></li>
-        </ul>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="book.html" class="book-button">Book now</a>
     </nav>
-    <div class="container">
-        <div class="section" id="home">
-            <h2>Welcome to Pacific Building Solutions</h2>
-            <p>We provide top-tier cleaning services across the DFW Metroplex, including Fort Worth, Arlington, Dallas, Frisco, Plano, McKinney, and surrounding areas. Specializing in final cleaning, puff cleaning, and rough cleaning, we ensure your project is spotless and ready for handover. Request a free quote today!</p>
-        </div>
-        <div class="section" id="services">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Final Cleaning</h3>
-                    <p>Comprehensive cleaning for completed construction projects, ensuring a pristine handover for clients or tenants.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Puff Cleaning</h3>
-                    <p>Specialized cleaning to remove dust and debris during construction phases, maintaining a safe and clean site.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Rough Cleaning</h3>
-                    <p>Thorough cleanup after rough construction stages, preparing spaces for finishing work.</p>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="reviews">
-            <h2>Client Reviews</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <p>"Pacific Building Solutions delivered an impeccable final clean for our project in Dallas. Highly professional!"</p>
-                    <p><strong>- John S., General Contractor</strong></p>
-                </div>
-                <div class="review-card">
-                    <p>"Their puff cleaning service kept our site dust-free during construction. Highly recommend!"</p>
-                    <p><strong>- Lisa M., Project Manager</strong></p>
-                </div>
-                <div class="review-card">
-                    <p>"The rough cleaning was thorough and efficient, saving us time on our Arlington project."</p>
-                    <p><strong>- Mark T., Builder</strong></p>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="story">
-            <h2>Our Story</h2>
-            <div class="story-content">
-                <p>Pacific Building Solutions was founded with a passion for delivering exceptional cleaning services for construction projects in the DFW Metroplex. From Fort Worth to Frisco, we serve areas like Arlington, Plano, and McKinney with dedication to quality and eco-friendly practices. Our team is committed to making your project shine.</p>
-            </div>
-        </div>
-        <div class="section" id="contact">
-            <h2>Contact Us</h2>
-            <div class="form-container">
-                <form action="https://formspree.io/f/xanbjlqv" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="tel" name="phone" placeholder="Your Phone Number">
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </div>
-        <div class="section" id="quote">
-            <h2>Get a Free Quote</h2>
-            <div class="form-container">
-                <form action="https://formspree.io/f/xdkdzpay" method="POST" enctype="multipart/form-data">
-                    <input type="text" name="gc_company" placeholder="General Contractor Company" required>
-                    <select name="cleaning_type" required>
-                        <option value="" disabled selected>Select Cleaning Type</option>
-                        <option value="final_cleaning">Final Cleaning</option>
-                        <option value="puff_cleaning">Puff Cleaning</option>
-                        <option value="rough_cleaning">Rough Cleaning</option>
-                    </select>
-                    <input type="text" name="project_address" placeholder="Project Address" required>
-                    <input type="date" name="preferred_date" placeholder="Preferred Service Date" required>
-                    <input type="email" name="email" placeholder="Contact Email" required>
-                    <input type="tel" name="phone" placeholder="Contact Phone Number" required>
-                    <div class="checkbox-container">
-                        <input type="checkbox" name="window_cleaning" id="window_cleaning">
-                        <label for="window_cleaning">Include Window Cleaning</label>
-                    </div>
-                    <input type="file" name="plans" accept=".pdf,.doc,.docx">
-                    <textarea name="details" rows="5" placeholder="Additional Details"></textarea>
-                    <button type="submit">Request Quote</button>
-                </form>
-            </div>
-        </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Welcome to Pacific Building Solutions</h1>
+        <p>Transforming post-construction mess into sparkling spaces — proudly serving Dallas-Fort Worth.</p>
+        <a href="#contact" class="hero-button">Get a Free Quote</a>
+      </div>
     </div>
-    <footer>
-        <p>&copy; 2025 Pacific Building Solutions. All Rights Reserved. Serving the DFW Metroplex and surrounding areas.</p>
-    </footer>
+  </section>
+
+  <div class="marquee">
+    <span>Experience the Art of Pristine Cleaning — Tailored Solutions That Shine</span>
+  </div>
+
+  <section class="services" id="services">
+    <div style="flex: 1; min-width: 300px;">
+      <img src="https://raw.githubusercontent.com/bryan10001/image/main/IMG_0941.jpeg" />
+    </div>
+    <div style="flex: 1; min-width: 300px;">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Post-Construction Cleaning</li>
+        <li>Rough, Final, and Touch-Up Cleaning</li>
+        <li>Carpet Cleaning</li>
+        <li>Window Cleaning</li>
+        <li>Hard Floor Care</li>
+        <li>Specialized Debris Removal</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Get Your Free Consultation</h2>
+    <p>We provide tailored cleaning solutions for contractors, developers, and property managers.</p>
+    <button>Contact Us</button>
+  </section>
+
+  <section class="ethos" id="about">
+    <h2>Our Company Ethos</h2>
+    <p>
+      Built on a legacy of dedication and craftsmanship, we deliver results with pride and precision.
+      Rooted in Dallas-Fort Worth, we’re driven by excellence and integrity.
+    </p>
+  </section>
+
+  <section class="contact-form" id="contact">
+    <h2>Contact Us for a Free Quote or General Inquiry</h2>
+    <form action="https://formspree.io/f/xanbjlqv" <form action="http">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your full name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Logo" class="logo" />
+    <p>2016 Greenwood Road, Carrollton, TX</p>
+    <p>bryan@pbsdfw.com | 469.733.0164</p>
+    <p>&copy; 2025 Pacific Building Solutions</p>
+  </footer>
 </body>
 </html>
