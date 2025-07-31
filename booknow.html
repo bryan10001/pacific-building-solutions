@@ -43,27 +43,44 @@
 
     label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       font-weight: bold;
+      margin-left: 0;
     }
 
     input, select, textarea {
       width: 100%;
-      padding: 10px;
+      padding: 8px;
       margin-bottom: 10px;
       border: 1px solid var(--soft-steel-blue);
       border-radius: 4px;
+      box-sizing: border-box;
     }
 
     .checkbox-group {
-      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
     }
 
     .checkbox-group label {
-      display: inline;
-      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+      margin-left: 0;
     }
 
+    .checkbox-group input[type="checkbox"]{
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+    }
+
+    textarea{
+      resize: vertical;
+    }
+    
     button {
       background-color: var(--taupe-gray);
       color: var(--classic-white);
@@ -82,7 +99,7 @@
 <body>
   <div class="container">
     <h1>Please Fill Out Information</h1>
-    <p>One of our representatives will reach out to you soon.</p>
+    <p style="text-align: center;">One of our representatives will reach out to you soon.</p>
     <form action="https://formspree.io/f/xdkdzpay" method="POST">
       <div class="form-group">
         <label for="name">Full Name</label>
