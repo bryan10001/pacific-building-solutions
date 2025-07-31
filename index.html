@@ -29,15 +29,28 @@
 
     header {
       background-color: var(--rich-black);
-      padding: 20px 40px;
+      padding: 10px 40px; /* Minimal padding for balance */
       display: flex;
       justify-content: space-between;
       align-items: center;
-    
+      height: 620px; /* Increased to accommodate large logo */
     }
 
     .logo {
-      width: 160px;
+      width: auto; /* Allow natural width based on height */
+    }
+
+    header img.logo {
+      height: 600px; /* Extremely large compared to 12px nav text */
+      object-fit: contain;
+      animation: fadeIn 2s ease-in-out forwards;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) contrast(110%); /* Enhance clarity */
+      margin-right: 20px; /* Balance spacing with nav */
+      transition: transform 0.3s ease; /* Hover effect */
+    }
+
+    header img.logo:hover {
+      transform: scale(1.05); /* Subtle hover effect for professionalism */
     }
 
     nav {
@@ -50,6 +63,7 @@
       color: var(--classic-white);
       text-decoration: none;
       font-weight: 500;
+      font-size: 12px; /* Small size to emphasize logo */
     }
 
     nav a:hover {
@@ -63,11 +77,12 @@
       border-radius: 20px;
       font-weight: bold;
       text-decoration: none;
+      font-size: 12px; /* Match nav text size */
     }
 
     .hero {
       position: relative;
-      background-image: url('https://raw.githubusercontent.com/bryan10001/image/main/Minimalist%20Cleaning%20Supplies%20Arrangement.png'); /* Replace this */
+      background-image: url('https://raw.githubusercontent.com/bryan10001/image/main/Minimalist%20Cleaning%20Supplies%20Arrangement.png');
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -233,11 +248,25 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @media (max-width: 768px) {
+      header {
+        height: 140px; /* Adjusted for mobile */
+        padding: 10px 20px; /* Reduced padding for mobile */
+      }
+      header img.logo {
+        height: 120px; /* Prominent but fits mobile */
+        margin-right: 10px; /* Reduced margin for mobile */
+      }
+      nav a, .book-button {
+        font-size: 11px; /* Slightly smaller for mobile */
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Pacific Building Solutions Logo" style="height: 350px; object-fit: contain;" />
+    <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Pacific Building Solutions Logo" class="logo" />
     <nav>
       <a href="#services">Services</a>
       <a href="#about">About</a>
@@ -293,15 +322,15 @@
 
   <section class="contact-form" id="contact">
     <h2>Contact Us for a Free Quote or General Inquiry</h2>
-    <form action="https://formspree.io/f/xanbjlqv" <form action="http">
+    <form action="https://formspree.io/f/xanbjlqv" method="POST">
       <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Your full name" required />
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
 
       <label for="email">Email</label>
-      <input type="email" id="email" placeholder="you@example.com" required />
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
       <label for="message">Message</label>
-      <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+      <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
 
       <button type="submit">Send</button>
     </form>
