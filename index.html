@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pacific Building Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --slate-blue-grey: #7C9BA8;
@@ -17,7 +17,7 @@
 
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Helvetica Neue', sans-serif;
       background-color: var(--warm-beige);
       color: var(--rich-black);
     }
@@ -29,25 +29,15 @@
 
     header {
       background-color: var(--rich-black);
-      padding: 15px 40px;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 110px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    
     }
 
     .logo {
-      width: auto;
-    }
-
-    header img.logo {
-      height: 250px; /* Significantly larger than 12px nav text */
-      object-fit: contain;
-      animation: fadeIn 1.5s ease-in-out forwards;
-      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2)) contrast(150%) brightness(110%);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      margin-right: 20px;
+      width: 160px;
     }
 
     nav {
@@ -60,32 +50,24 @@
       color: var(--classic-white);
       text-decoration: none;
       font-weight: 500;
-      font-size: 12px;
-      transition: color 0.2s ease;
     }
 
     nav a:hover {
-      color: var(--soft-steel-blue);
+      color: var(--taupe-gray);
     }
-
+    
     .book-button {
-      background-color: var(--soft-steel-blue);
-      color: var(--classic-white);
+      background-color: var(--classic-white);
+      color: var(--rich-black);
       padding: 8px 16px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 12px;
+      border-radius: 20px;
+      font-weight: bold;
       text-decoration: none;
-      transition: background-color 0.2s ease;
-    }
-
-    .book-button:hover {
-      background-color: var(--taupe-gray);
     }
 
     .hero {
       position: relative;
-      background-image: url('https://raw.githubusercontent.com/bryan10001/image/main/Minimalist%20Cleaning%20Supplies%20Arrangement.png');
+      background-image: url('https://raw.githubusercontent.com/bryan10001/image/main/Minimalist%20Cleaning%20Supplies%20Arrangement.png'); /* Replace this */
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -108,42 +90,37 @@
     .hero-content {
       z-index: 1;
       max-width: 700px;
-      animation: fadeIn 1.5s ease-in-out;
+      animation: fadeIn 2s ease-in-out;
     }
 
     .hero-content h1 {
-      font-size: 2.8em;
+      font-size: 3em;
       margin-bottom: 20px;
       color: var(--classic-white);
     }
 
     .hero-content p {
-      font-size: 1.2em;
+      font-size: 1.3em;
       margin-bottom: 30px;
       color: var(--warm-beige);
     }
 
     .hero-button {
-      background-color: var(--soft-steel-blue);
-      color: var(--classic-white);
-      padding: 12px 24px;
-      border-radius: 4px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.2s ease;
-    }
-
-    .hero-button:hover {
       background-color: var(--taupe-gray);
+      color: var(--classic-white);
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
     }
 
     .marquee {
       background-color: var(--rich-black);
       color: var(--taupe-gray);
-      font-size: 1.6em;
-      font-weight: 600;
+      font-size: 1.8em;
+      font-weight: bold;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       overflow: hidden;
       white-space: nowrap;
       box-sizing: border-box;
@@ -161,14 +138,14 @@
     }
 
     section {
-      padding: 50px 20px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
     }
 
     .services {
       background-color: var(--warm-beige);
-      border-top: 1px solid var(--soft-steel-blue);
+      border-top: 2px solid var(--soft-steel-blue);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -177,44 +154,35 @@
 
     .services img {
       width: 100%;
-      border-radius: 4px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
     }
 
     .cta {
-      background-color: var(--warm-beige);
+      background-color: var(--soft-steel-blue);
       text-align: center;
       color: var(--rich-black);
-      padding: 50px 20px;
     }
 
     .cta button {
-      background-color: var(--soft-steel-blue);
+      background-color: var(--taupe-gray);
       border: none;
       padding: 12px 24px;
-      color: var(--classic-white);
+      color: white;
       font-size: 1em;
-      font-weight: 600;
       margin-top: 20px;
       cursor: pointer;
-      border-radius: 4px;
-      transition: background-color 0.2s ease;
-    }
-
-    .cta button:hover {
-      background-color: var(--taupe-gray);
+      border-radius: 6px;
     }
 
     .ethos {
-      background-color: var(--warm-beige);
-      color: var(--rich-black);
-      padding: 50px 20px;
+      background-color: var(--slate-blue-grey);
+      color: var(--classic-white);
     }
 
     .contact-form {
       background-color: var(--rich-black);
       color: var(--classic-white);
-      padding: 50px 20px;
+      padding: 60px 20px;
     }
 
     .contact-form h2 {
@@ -231,7 +199,7 @@
     .contact-form label {
       display: block;
       margin: 10px 0 5px;
-      font-weight: 500;
+      font-weight: bold;
     }
 
     .contact-form input,
@@ -243,22 +211,15 @@
       border: 1px solid var(--soft-steel-blue);
       color: var(--classic-white);
       border-radius: 4px;
-      font-family: 'Inter', sans-serif;
     }
 
     .contact-form button {
       background-color: var(--soft-steel-blue);
-      color: var(--classic-white);
+      color: var(--rich-black);
       border: none;
       padding: 12px 24px;
       cursor: pointer;
       border-radius: 4px;
-      font-weight: 600;
-      transition: background-color 0.2s ease;
-    }
-
-    .contact-form button:hover {
-      background-color: var(--taupe-gray);
     }
 
     footer {
@@ -266,54 +227,22 @@
       color: var(--classic-white);
       text-align: center;
       padding: 30px 10px;
-      box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.1);
-    }
-
-    footer img {
-      height: 400px;
-      object-fit: contain;
-      margin-bottom: 20px;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      header {
-        height: 90px;
-        padding: 10px 20px;
-      }
-      header img.logo {
-        height: 64px;
-        margin-right: 10px;
-      }
-      nav a, .book-button {
-        font-size: 11px;
-        gap: 16px;
-      }
-      .hero-content h1 {
-        font-size: 2em;
-      }
-      .hero-content p {
-        font-size: 1em;
-      }
-      footer img {
-        height: 200px; /* Reduced for mobile */
-        margin-bottom: 15px;
-      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Pacific Building Solutions Logo" class="logo" />
+    <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Pacific Building Solutions Logo" style="height: 350px; object-fit: contain;" />
     <nav>
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="book/booknow.html" class="book-button">Book Now</a>
+      <a href="booknow.html" class="book-button">Book now</a>
     </nav>
   </header>
 
@@ -364,22 +293,22 @@
 
   <section class="contact-form" id="contact">
     <h2>Contact Us for a Free Quote or General Inquiry</h2>
-    <form action="https://formspree.io/f/xanbjlqv" method="POST">
+    <form action="https://formspree.io/f/xanbjlqv" <form action="http">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your full name" required />
+      <input type="text" id="name" placeholder="Your full name" required />
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      <input type="email" id="email" placeholder="you@example.com" required />
 
       <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+      <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
 
       <button type="submit">Send</button>
     </form>
   </section>
 
   <footer>
-    <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Logo" />
+    <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Logo" style="height: 400px; object-fit: contain;" />
     <p>2016 Greenwood Road, Carrollton, TX</p>
     <p>bryan@pbsdfw.com | 469.733.0164</p>
     <p>&copy; 2025 Pacific Building Solutions</p>
