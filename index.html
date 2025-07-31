@@ -29,11 +29,11 @@
 
     header {
       background-color: var(--rich-black);
-      padding: 10px 40px; /* Minimal padding for balance */
+      padding: 10px 40px; /* Compact padding */
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 620px; /* Increased to accommodate large logo */
+      height: 60px; /* Compact height for smaller logo */
     }
 
     .logo {
@@ -41,16 +41,11 @@
     }
 
     header img.logo {
-      height: 600px; /* Extremely large compared to 12px nav text */
+      height: 30px; /* Slightly larger than 12px nav text */
       object-fit: contain;
       animation: fadeIn 2s ease-in-out forwards;
       filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) contrast(110%); /* Enhance clarity */
-      margin-right: 20px; /* Balance spacing with nav */
-      transition: transform 0.3s ease; /* Hover effect */
-    }
-
-    header img.logo:hover {
-      transform: scale(1.05); /* Subtle hover effect for professionalism */
+      margin-right: 15px; /* Balanced spacing with nav */
     }
 
     nav {
@@ -63,7 +58,7 @@
       color: var(--classic-white);
       text-decoration: none;
       font-weight: 500;
-      font-size: 12px; /* Small size to emphasize logo */
+      font-size: 12px; /* Reference size for logo comparison */
     }
 
     nav a:hover {
@@ -251,11 +246,11 @@
 
     @media (max-width: 768px) {
       header {
-        height: 140px; /* Adjusted for mobile */
-        padding: 10px 20px; /* Reduced padding for mobile */
+        height: 50px; /* Compact for mobile */
+        padding: 8px 20px; /* Reduced padding for mobile */
       }
       header img.logo {
-        height: 120px; /* Prominent but fits mobile */
+        height: 25px; /* Slightly larger than 11px nav text */
         margin-right: 10px; /* Reduced margin for mobile */
       }
       nav a, .book-button {
