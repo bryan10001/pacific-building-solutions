@@ -34,14 +34,14 @@
       overflow: visible;
     }
     .logo {
-      height: 180px;
+      height: 250px;
       max-height: none;
       width: auto;
       position: relative;
       z-index: 2;
     }
     nav {
-     display: flex;
+      display: flex;
       gap: 20px;
       align-items: center;
     }
@@ -188,6 +188,7 @@
       border: 1px solid var(--soft-steel-blue);
       color: var(--classic-white);
       border-radius: 4px;
+      box-sizing: border-box;
     }
     .contact-form button {
       background-color: var(--soft-steel-blue);
@@ -201,7 +202,38 @@
       background-color: var(--rich-black);
       color: var(--classic-white);
       text-align: center;
-      padding: 30px 10px;
+      padding: 40px 20px 30px 20px;
+      position: relative;
+      min-height: 350px;
+    }
+    /* Professional footer logo styling */
+    footer .logo {
+      height: 450px;
+      width: auto;
+      margin: 0 auto 10px auto; /* Reduced bottom margin */
+      display: block;
+      filter: brightness(1.1);
+      transition: transform 0.3s ease;
+    }
+    footer .logo:hover {
+      transform: scale(1.05);
+    }
+    /* Contact info positioning - moved up and reordered */
+    .contact-info {
+      margin: 15px 0 40px 0; /* Reduced top margin to move up */
+      width: 100%;
+    }
+    .contact-info p {
+      margin: 6px 0; /* Slightly reduced spacing */
+      font-size: 0.95em;
+      opacity: 0.9;
+      line-height: 1.4;
+    }
+    /* Copyright at bottom with more space */
+    .copyright {
+      margin-top: 30px; /* Increased margin to push down */
+      font-size: 0.85em;
+      opacity: 0.7;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -243,6 +275,21 @@
       }
       header img {
         height: 150px !important;
+      }
+      /* Mobile footer adjustments */
+      footer {
+        padding: 30px 15px;
+        min-height: 250px;
+      }
+      footer .logo {
+        height: 180px;
+        margin-bottom: 10px;
+      }
+      .contact-info {
+        margin: 10px 0 25px 0;
+      }
+      .contact-info p {
+        font-size: 0.9em;
       }
     }
   </style>
@@ -302,7 +349,7 @@
     <h2>Our Company Ethos</h2>
     <p>
       Built on a legacy of dedication and craftsmanship, we deliver results with pride and precision.
-      Rooted in Dallas-Fort Worth, we’re driven by excellence and integrity.
+      Rooted in Dallas-Fort Worth, we're driven by excellence and integrity.
     </p>
   </section>
 
@@ -324,9 +371,11 @@
 
   <footer>
     <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Logo" class="logo">
-    <p>2016 Greenwood Road, Carrollton, TX</p>
-    <p>bryan@pbsdfw.com | 469.733.0164</p>
-    <p>&copy; 2025 Pacific Building Solutions</p>
+    <div class="contact-info">
+      <p>bryan@pbsdfw.com | 469.733.0164</p>
+      <p>2016 Greenwood Road, Carrollton, TX</p>
+    </div>
+    <p class="copyright">&copy; 2025 Pacific Building Solutions</p>
   </footer>
 
   <script>
