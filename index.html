@@ -32,6 +32,7 @@
       align-items: center;
       height: 100px;
       overflow: visible;
+      position: relative;
     }
     .logo {
       height: 250px;
@@ -244,38 +245,75 @@
       display: none;
       background: none;
       border: none;
-      font-size: 2.5em;
+      font-size: 2em;
       color: var(--classic-white);
       cursor: pointer;
-      margin-left: 20px;
+      z-index: 101;
+      position: relative;
+      padding: 10px;
     }
+    .hamburger:hover {
+      color: var(--taupe-gray);
+    }
+    
+    /* Mobile Navigation Styles */
     @media (max-width: 800px) {
+      header {
+        padding: 15px 20px;
+        height: auto;
+        min-height: 80px;
+        /* Keep flex-direction row to maintain hamburger positioning */
+        flex-direction: row;
+        align-items: center;
+      }
+      
+      .logo {
+        height: 150px !important;
+        flex-shrink: 0;
+      }
+      
+      .hamburger {
+        display: block;
+        margin-left: auto;
+      }
+      
       nav {
         display: none;
         flex-direction: column;
         background: var(--rich-black);
         position: absolute;
-        top: 80px;
+        top: 100%;
+        left: 0;
         right: 0;
-        width: 200px;
+        width: 100%;
         padding: 20px;
         z-index: 100;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border-top: 1px solid var(--soft-steel-blue);
       }
+      
       nav.open {
         display: flex;
       }
-      .hamburger {
-        display: block;
+      
+      nav a {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+        font-size: 1.1em;
       }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
+      
+      nav a:last-child {
+        border-bottom: none;
       }
-      header img {
-        height: 150px !important;
+      
+      .book-button {
+        margin-top: 10px;
+        padding: 12px 20px;
+        display: inline-block;
+        text-align: center;
       }
+      
       /* Mobile footer adjustments */
       footer {
         padding: 30px 15px;
@@ -291,21 +329,59 @@
       .contact-info p {
         font-size: 0.9em;
       }
+      
+      /* Mobile hero adjustments */
+      .hero-content h1 {
+        font-size: 2.5em;
+      }
+      .hero-content p {
+        font-size: 1.1em;
+      }
+      
+      /* Mobile marquee adjustments */
+      .marquee {
+        font-size: 1.4em;
+      }
+    }
+    
+    /* Extra small screens */
+    @media (max-width: 480px) {
+      header {
+        padding: 10px 15px;
+      }
+      
+      .logo {
+        height: 120px !important;
+      }
+      
+      .hamburger {
+        font-size: 1.8em;
+        padding: 8px;
+      }
+      
+      nav {
+        padding: 15px;
+      }
+      
+      nav a {
+        padding: 12px 0;
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Pacific Building Solutions Logo" class="logo">
+    <button class="hamburger" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false">
+      ☰
+    </button>
     <nav role="navigation" aria-label="Main navigation" id="main-nav">
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a href="booknow.html" class="book-button">Book now</a>
     </nav>
-    <button class="hamburger" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false">
-      ☰
-    </button>
   </header>
 
   <section class="hero">
@@ -382,10 +458,19 @@
     document.addEventListener('DOMContentLoaded', function() {
       const hamburger = document.querySelector('.hamburger');
       const nav = document.getElementById('main-nav');
+      
       hamburger.addEventListener('click', function() {
         nav.classList.toggle('open');
         const expanded = hamburger.getAttribute('aria-expanded') === 'true';
         hamburger.setAttribute('aria-expanded', !expanded);
+      });
+      
+      // Close menu when clicking on a nav link
+      nav.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+          nav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
       });
     });
   </script>
