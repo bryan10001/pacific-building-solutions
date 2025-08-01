@@ -30,10 +30,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 100px; /* Fixed header height */
+      overflow: visible;
     }
     .logo {
-      width: 160px;
-      object-fit: contain;
+      height: 140px;      /* Make logo bigger */
+      max-height: none;
+      width: auto;
+      position: relative;
+      z-index: 2;
     }
     nav {
       display: flex;
