@@ -41,6 +41,11 @@
       position: relative;
       z-index: 2;
     }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
     nav {
       display: flex;
       gap: 20px;
@@ -245,15 +250,32 @@
       display: none;
       background: none;
       border: none;
-      font-size: 2em;
+      font-size: 2.5em;
       color: var(--classic-white);
       cursor: pointer;
-      z-index: 101;
+      z-index: 1000;
       position: relative;
-      padding: 10px;
+      padding: 15px;
+      min-width: 60px;
+      min-height: 60px;
+      border: 2px solid transparent;
     }
     .hamburger:hover {
       color: var(--taupe-gray);
+      border-color: var(--taupe-gray);
+    }
+    .hamburger:focus {
+      outline: 2px solid var(--classic-white);
+    }
+    
+    /* Desktop Navigation - keep visible on larger screens */
+    @media (min-width: 801px) {
+      .hamburger {
+        display: none !important;
+      }
+      nav {
+        display: flex !important;
+      }
     }
     
     /* Mobile Navigation Styles */
@@ -262,9 +284,7 @@
         padding: 15px 20px;
         height: auto;
         min-height: 80px;
-        /* Keep flex-direction row to maintain hamburger positioning */
-        flex-direction: row;
-        align-items: center;
+        flex-wrap: wrap;
       }
       
       .logo {
@@ -272,9 +292,18 @@
         flex-shrink: 0;
       }
       
+      .nav-container {
+        order: 3;
+        width: 100%;
+        position: relative;
+      }
+      
       .hamburger {
-        display: block;
-        margin-left: auto;
+        display: block !important;
+        position: absolute;
+        top: -60px;
+        right: 0;
+        background-color: var(--rich-black);
       }
       
       nav {
@@ -282,18 +311,18 @@
         flex-direction: column;
         background: var(--rich-black);
         position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100%;
+        top: 0;
+        left: -20px;
+        right: -20px;
+        width: calc(100% + 40px);
         padding: 20px;
-        z-index: 100;
+        z-index: 999;
         box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         border-top: 1px solid var(--soft-steel-blue);
       }
       
       nav.open {
-        display: flex;
+        display: flex !important;
       }
       
       nav a {
@@ -301,6 +330,8 @@
         border-bottom: 1px solid rgba(255,255,255,0.1);
         text-align: center;
         font-size: 1.1em;
+        display: block;
+        width: 100%;
       }
       
       nav a:last-child {
@@ -312,6 +343,8 @@
         padding: 12px 20px;
         display: inline-block;
         text-align: center;
+        background-color: var(--classic-white) !important;
+        color: var(--rich-black) !important;
       }
       
       /* Mobile footer adjustments */
@@ -355,12 +388,18 @@
       }
       
       .hamburger {
-        font-size: 1.8em;
-        padding: 8px;
+        font-size: 2em;
+        padding: 12px;
+        min-width: 50px;
+        min-height: 50px;
+        top: -50px;
       }
       
       nav {
         padding: 15px;
+        left: -15px;
+        right: -15px;
+        width: calc(100% + 30px);
       }
       
       nav a {
@@ -373,15 +412,18 @@
 <body>
   <header>
     <img src="https://raw.githubusercontent.com/bryan10001/image/main/PACIFIC-3.png" alt="Pacific Building Solutions Logo" class="logo">
-    <button class="hamburger" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false">
-      ☰
-    </button>
-    <nav role="navigation" aria-label="Main navigation" id="main-nav">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="booknow.html" class="book-button">Book now</a>
-    </nav>
+    
+    <div class="nav-container">
+      <button class="hamburger" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false">
+        ☰
+      </button>
+      <nav role="navigation" aria-label="Main navigation" id="main-nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="booknow.html" class="book-button">Book now</a>
+      </nav>
+    </div>
   </header>
 
   <section class="hero">
@@ -427,6 +469,7 @@
       Built on a legacy of dedication and craftsmanship, we deliver results with pride and precision.
       Rooted in Dallas-Fort Worth, we're driven by excellence and integrity.
     </p>
+  </p>
   </section>
 
   <section class="contact-form" id="contact">
@@ -459,19 +502,28 @@
       const hamburger = document.querySelector('.hamburger');
       const nav = document.getElementById('main-nav');
       
-      hamburger.addEventListener('click', function() {
-        nav.classList.toggle('open');
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', !expanded);
-      });
-      
-      // Close menu when clicking on a nav link
-      nav.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A') {
-          nav.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-        }
-      });
+      if (hamburger && nav) {
+        hamburger.addEventListener('click', function() {
+          nav.classList.toggle('open');
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          
+          // Debug logging
+          console.log('Hamburger clicked, menu open:', nav.classList.contains('open'));
+        });
+        
+        // Close menu when clicking on a nav link
+        nav.addEventListener('click', function(e) {
+          if (e.target.tagName === 'A') {
+            nav.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        // Debug: Check if hamburger is visible
+        console.log('Hamburger element found:', hamburger);
+        console.log('Nav element found:', nav);
+      }
     });
   </script>
 </body>
