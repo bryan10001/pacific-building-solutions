@@ -40,6 +40,7 @@
       width: auto;
       position: relative;
       z-index: 2;
+      transition: height 0.3s, max-width 0.3s;
     }
     .nav-container {
       display: flex;
@@ -214,12 +215,13 @@
     }
     /* Professional footer logo styling */
     footer .logo {
-      height: 450px;
+      height: 300px;
       width: auto;
       margin: 0 auto 10px auto; /* Reduced bottom margin */
       display: block;
       filter: brightness(1.1);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, height 0.3s, max-width 0.3s;
+      max-width: 95vw;
     }
     footer .logo:hover {
       transform: scale(1.05);
@@ -286,18 +288,16 @@
         min-height: 80px;
         flex-wrap: wrap;
       }
-      
       .logo {
-        height: 150px !important;
+        height: 110px !important;
+        max-width: 90vw;
         flex-shrink: 0;
       }
-      
       .nav-container {
         order: 3;
         width: 100%;
         position: relative;
       }
-      
       .hamburger {
         display: block !important;
         position: absolute;
@@ -305,7 +305,6 @@
         right: 0;
         background-color: var(--rich-black);
       }
-      
       nav {
         display: none;
         flex-direction: column;
@@ -320,11 +319,9 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         border-top: 1px solid var(--soft-steel-blue);
       }
-      
       nav.open {
         display: flex !important;
       }
-      
       nav a {
         padding: 15px 0;
         border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -333,11 +330,9 @@
         display: block;
         width: 100%;
       }
-      
       nav a:last-child {
         border-bottom: none;
       }
-      
       .book-button {
         margin-top: 10px;
         padding: 12px 20px;
@@ -346,15 +341,15 @@
         background-color: var(--classic-white) !important;
         color: var(--rich-black) !important;
       }
-      
       /* Mobile footer adjustments */
       footer {
         padding: 30px 15px;
         min-height: 250px;
       }
       footer .logo {
-        height: 180px;
+        height: 120px;
         margin-bottom: 10px;
+        max-width: 90vw;
       }
       .contact-info {
         margin: 10px 0 25px 0;
@@ -362,7 +357,6 @@
       .contact-info p {
         font-size: 0.9em;
       }
-      
       /* Mobile hero adjustments */
       .hero-content h1 {
         font-size: 2.5em;
@@ -370,23 +364,20 @@
       .hero-content p {
         font-size: 1.1em;
       }
-      
       /* Mobile marquee adjustments */
       .marquee {
         font-size: 1.4em;
       }
     }
-    
     /* Extra small screens */
     @media (max-width: 480px) {
       header {
         padding: 10px 15px;
       }
-      
       .logo {
-        height: 120px !important;
+        height: 80px !important;
+        max-width: 98vw;
       }
-      
       .hamburger {
         font-size: 2em;
         padding: 12px;
@@ -394,17 +385,19 @@
         min-height: 50px;
         top: -50px;
       }
-      
       nav {
         padding: 15px;
         left: -15px;
         right: -15px;
         width: calc(100% + 30px);
       }
-      
       nav a {
         padding: 12px 0;
         font-size: 1em;
+      }
+      footer .logo {
+        height: 70px !important;
+        max-width: 98vw;
       }
     }
   </style>
@@ -412,7 +405,6 @@
 <body>
   <header>
     <img src="LATESTPACIFIC.svg" alt="Pacific Building Solutions Logo" class="logo">
-    
     <div class="nav-container">
       <button class="hamburger" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false">
         ☰
@@ -425,21 +417,17 @@
       </nav>
     </div>
   </header>
-
   <section class="hero">
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Welcome to Pacific Building Solutions</h1>
-        <p>We transform post-construction sites into pristine, move-in-ready commercial spaces across Dallas-Fort Worth. Our expert team provides eco-friendly, tailored cleanups for offices, retail centers, and large-scale projects, ensuring precision and timeliness. Serving contractors, developers, and property managers with unmatched professionalism.  </p>
-        <a href="#contact" class="hero-button">Get a Free Quote</a>
+        <p>We transform post-construction sites into pristine, move-in-ready commercial spaces across Dallas-Fort Worth. Our expert team provides eco-friendly, tailored cleanups for offices, retail ce[...]        <a href="#contact" class="hero-button">Get a Free Quote</a>
       </div>
     </div>
   </section>
-
   <div class="marquee">
     <span>Experience the Art of Pristine Cleaning — Tailored Solutions That Shine</span>
   </div>
-
   <section class="services" id="services">
     <div style="flex: 1; min-width: 300px;">
       <img src="https://raw.githubusercontent.com/bryan10001/image/main/IMG_0941.jpeg" />
@@ -456,37 +444,29 @@
       </ul>
     </div>
   </section>
-
   <section class="cta">
     <h2>Get Your Free Consultation</h2>
     <p>Ready to elevate your commercial project? Contact us today for a tailored cleaning plan or general inquiry.</p>
     <a href="#contact"><button>Contact Us</button></a>
   </section>
-
   <section class="ethos" id="about">
     <h2>Our Company Ethos</h2>
     <p>
-     Founded in 2025, Pacific Building Solutions is a team dedicated to redefining final cleaning for commercial projects across Dallas-Fort Worth. With deep expertise in post-construction cleanups, we unite precision, eco-conscious methods, and a client-first approach to deliver flawless spaces for offices, retail centers, and large-scale developments. Our commitment to integrity and excellence drives us to exceed expectations, ensuring contractors, developers, and property managers receive reliable, high-quality service that supports their vision and timelines.
-    </p>
+     Founded in 2025, Pacific Building Solutions is a team dedicated to redefining final cleaning for commercial projects across Dallas-Fort Worth. With deep expertise in post-construction cleanups, w[...]    </p>
   </p>
   </section>
-
   <section class="contact-form" id="contact">
     <h2>Contact Us for a Free Quote or General Inquiry</h2>
     <form action="https://formspree.io/f/xanbjlqv" method="POST">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Your full name" required />
-
       <label for="email">Email</label>
       <input type="email" id="email" name="email" placeholder="you@example.com" required />
-
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
-
       <button type="submit">Send</button>
     </form>
   </section>
-
   <footer>
     <img src="LATESTPACIFIC.svg" alt="Logo" class="logo">
     <div class="contact-info">
@@ -495,22 +475,18 @@
     </div>
     <p class="copyright">&copy; 2025 Pacific Building Solutions</p>
   </footer>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const hamburger = document.querySelector('.hamburger');
       const nav = document.getElementById('main-nav');
-      
       if (hamburger && nav) {
         hamburger.addEventListener('click', function() {
           nav.classList.toggle('open');
           const expanded = hamburger.getAttribute('aria-expanded') === 'true';
           hamburger.setAttribute('aria-expanded', !expanded);
-          
           // Debug logging
           console.log('Hamburger clicked, menu open:', nav.classList.contains('open'));
         });
-        
         // Close menu when clicking on a nav link
         nav.addEventListener('click', function(e) {
           if (e.target.tagName === 'A') {
@@ -518,7 +494,6 @@
             hamburger.setAttribute('aria-expanded', 'false');
           }
         });
-        
         // Debug: Check if hamburger is visible
         console.log('Hamburger element found:', hamburger);
         console.log('Nav element found:', nav);
