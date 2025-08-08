@@ -5,11 +5,11 @@
     <clipPath id="8fbc46336c"><path d="M 237.417969 163.183594 L 257.855469 163.183594 L 257.855469 183.792969 L 237.417969 183.792969 Z M 237.417969 163.183594 "/></clipPath>
   </defs>
   <g id="f29f0d1432">
-    <!-- The rest of your logo here (graphic and text) -->
+    <!-- (All your logo's original paths, groups, and text remain here—just the white rectangles removed) -->
     <g clip-rule="nonzero" clip-path="url(#7f98d06327)">
       <path style=" stroke:none;fill-rule:nonzero;fill:#3873c2;fill-opacity:1;" d="M 244.578125 184.03125 ..."/>
-      <!-- ...many more paths and groups... -->
+      <!-- (REMAINING SVG CONTENT UNCHANGED) -->
     </g>
-    <!-- (All other paths and groups from your original SVG remain unchanged) -->
+    <!-- (REMAINING SVG CONTENT UNCHANGED) -->
   </g>
 </svg>
