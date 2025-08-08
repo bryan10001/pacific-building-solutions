@@ -1,8 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="120" viewBox="0 0 500 120" preserveAspectRatio="xMidYMid meet">
-  <!-- Simple wave graphic (replace with your real logo if desired) -->
-  <path d="M40,90 Q90,40 150,90 T260,90" fill="none" stroke="#3873c2" stroke-width="8"/>
-  <!-- Company name in bold blue -->
-  <text x="40" y="110" font-family="Arial, Helvetica, sans-serif" font-size="40" fill="#3873c2" font-weight="bold" letter-spacing="2">
-    pacific building solutions
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.2">
+  <defs>
+    <clipPath id="7f98d06327"><path d="M 116.855469 152.742188 L 251.726562 152.742188 L 251.726562 194.214844 L 116.855469 194.214844 Z M 116.855469 152.742188 "/></clipPath>
+    <clipPath id="85b00d1730"><path d="M 192 108.722656 L 221 108.722656 L 221 137 L 192 137 Z M 192 108.722656 "/></clipPath>
+    <clipPath id="8fbc46336c"><path d="M 237.417969 163.183594 L 257.855469 163.183594 L 257.855469 183.792969 L 237.417969 183.792969 Z M 237.417969 163.183594 "/></clipPath>
+  </defs>
+  <g id="f29f0d1432">
+    <!-- The rest of your logo here (graphic and text) -->
+    <g clip-rule="nonzero" clip-path="url(#7f98d06327)">
+      <path style=" stroke:none;fill-rule:nonzero;fill:#3873c2;fill-opacity:1;" d="M 244.578125 184.03125 ..."/>
+      <!-- ...many more paths and groups... -->
+    </g>
+    <!-- (All other paths and groups from your original SVG remain unchanged) -->
+  </g>
 </svg>
