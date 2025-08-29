@@ -8,7 +8,7 @@
   <title>Pacific Building Solutions</title>
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH+Z9JZ0iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -191,19 +191,11 @@
       text-align: center;
       position: relative;
     }
-    .service-img {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-      margin-bottom: 10px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .service-card i {
-      font-size: 2em;
+    .service-card i.service-img {
+      font-size: 2.5em;
       color: var(--taupe-gray);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      display: block;
     }
     .cta {
       background-color: var(--soft-steel-blue);
@@ -565,7 +557,8 @@
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Welcome to Pacific Building Solutions</h1>
-        <p>We transform post-construction sites into pristine, move-in-ready commercial spaces across Dallas-Fort Worth. Our expert team provides eco-friendly, tailored cleanups for offices, retail, and more.</p>
+        <p>We transform post-construction sites into pristine, move-in-ready commercial spaces across Dallas-Fort Worth. Our expert team provides eco-friendly, tailored cleanups for offices, retail, and industrial projects of all sizes.</p>
+        <a href="#contact" class="hero-button">Get a Free Quote</a>
       </div>
     </div>
   </section>
@@ -580,38 +573,32 @@
       <h2>Our Services</h2>
       <div class="services-list">
         <div class="service-card">
-          <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-broom-cleaning-flaticons-lineal-color-flat-icons.png" alt="Broom icon" class="service-img" />
-          <i class="fas fa-broom"></i>
+          <i class="fas fa-broom service-img" aria-hidden="true"></i>
           <h3>Post-Construction Cleaning</h3>
           <p>Our comprehensive service removes dust, debris, and residues to deliver a spotless finish.</p>
         </div>
         <div class="service-card">
-          <img src="https://img.icons8.com/color/64/hammer.png" alt="Tools icon" class="service-img" />
-          <i class="fas fa-tools"></i>
+          <i class="fas fa-tools service-img" aria-hidden="true"></i>
           <h3>Rough, Final, and Touch-Up Cleaning</h3>
           <p>We handle all stages of cleanup, from initial rough removal to final touches for perfection.</p>
         </div>
         <div class="service-card">
-          <img src="https://img.icons8.com/color/64/vacuum-cleaner.png" alt="Vacuum icon" class="service-img" />
-          <i class="fas fa-vacuum"></i>
+          <i class="fas fa-vacuum service-img" aria-hidden="true"></i>
           <h3>Carpet Cleaning</h3>
           <p>Deep cleaning and stain removal for carpets to restore them to like-new condition.</p>
         </div>
         <div class="service-card">
-          <img src="https://img.icons8.com/color/64/window-cleaner.png" alt="Window icon" class="service-img" />
-          <i class="fas fa-window"></i>
+          <i class="fas fa-window-restore service-img" aria-hidden="true"></i>
           <h3>Window Cleaning</h3>
           <p>Streak-free cleaning for windows, ensuring crystal-clear views inside and out.</p>
         </div>
         <div class="service-card">
-          <img src="https://img.icons8.com/color/64/mop.png" alt="Mop icon" class="service-img" />
-          <i class="fas fa-mop"></i>
+          <i class="fas fa-mop service-img" aria-hidden="true"></i>
           <h3>Hard Floor Care</h3>
           <p>Polishing, sealing, and maintenance for hard surfaces like tile, wood, and concrete.</p>
         </div>
         <div class="service-card">
-          <img src="https://img.icons8.com/color/64/garbage.png" alt="Trash icon" class="service-img" />
-          <i class="fas fa-trash"></i>
+          <i class="fas fa-trash service-img" aria-hidden="true"></i>
           <h3>Specialized Debris Removal</h3>
           <p>Safe and efficient removal of construction debris, including hazardous materials if needed.</p>
         </div>
@@ -625,7 +612,7 @@
   </section>
   <section class="ethos" id="about">
     <h2>Our Company Ethos</h2>
-    <p>Founded in 2025, Pacific Building Solutions is a team dedicated to redefining final cleaning for commercial projects across Dallas-Fort Worth. With deep expertise in post-construction cleanup, we provide reliable, thorough, and customized cleaning services that ensure every detail is move-in ready.</p>
+    <p>Founded in 2025, Pacific Building Solutions is a team dedicated to redefining final cleaning for commercial projects across Dallas-Fort Worth. With deep expertise in post-construction cleanup, we combine eco-friendly practices, client-centric solutions, and certified professionalism to guarantee your satisfaction.</p>
     <ul>
       <li>Eco-Friendly Practices: We use sustainable products to minimize environmental impact.</li>
       <li>Client-Centric Approach: Tailored solutions based on your specific needs.</li>
@@ -688,7 +675,7 @@
       <a href="https://www.instagram.com/pbsdfw" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       <a href="https://x.com/pbsdfw" aria-label="X"><i class="fab fa-x-twitter"></i></a>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.013!2d-96.889464!3d32.975641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c20d7b9b4a1d1%3A0x9a3b6b5a7f9b3d5d!2sCarrollton%2C%20TX!5e0!3m2!1sen!2sus!4v1693400000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.013!2d-96.889464!3d32.975641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c20d7b9b4a1d1%3A0x9a3b6b5a7f9b3d5d!2sCarrollton%2C%20TX%2075011!5e0!3m2!1sen!2sus!4v1683840339003!5m2!1sen!2sus" width="400" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <div class="legal-links">
       <a href="/privacy.html">Privacy Policy</a> |
       <a href="/terms.html">Terms of Service</a>
