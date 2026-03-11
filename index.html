@@ -181,26 +181,112 @@
     .services h2 {
       text-align: center;
       width: 100%;
-      margin: 0 0 30px 0;   /* optional: adds nice spacing below heading */
+      margin: 0 0 30px 0; /* optional: adds nice spacing below heading */
     }
-    .services-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .service-card {
-      background-color: var(--classic-white);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      text-align: center;
+    .services-gallery {
       position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    .service-card i.service-img {
-      font-size: 2.5em;
-      color: var(--taupe-gray);
-      margin-bottom: 12px;
+    .services-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .services-slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+    .services-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .services-slide img {
+      max-width: 100%;
+      max-height: 300px;
+      height: auto;
       display: block;
+      width: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      /* Ensure full color, no grayscale */
+      filter: none !important;
+    }
+    .services-slide h3 {
+      margin: 10px 0;
+      font-size: 1.5em;
+    }
+    .services-slide p {
+      font-size: 1em;
+      max-width: 80%;
+    }
+    .services-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .services-btn {
+      background-color: var(--classic-white);
+      border: 2px solid var(--taupe-gray);
+      color: var(--rich-black);
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .services-btn:hover {
+      background-color: var(--taupe-gray);
+      color: var(--classic-white);
+    }
+    .services-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .services-counter {
+      background-color: var(--rich-black);
+      color: var(--classic-white);
+      padding: 10px 15px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin: 0 15px;
+      min-width: 80px;
+      text-align: center;
+    }
+    .services-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(17,17,17,0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .dot.active {
+      background-color: var(--rich-black);
+      transform: scale(1.3);
     }
     .cta {
       background-color: var(--soft-steel-blue);
@@ -245,7 +331,7 @@
       background-color: var(--soft-steel-blue);
       text-align: center;
     }
-   
+  
     /* Portfolio Gallery Styles */
     .portfolio h2 {
       color: var(--classic-white);
@@ -604,14 +690,14 @@
       .marquee {
         font-size: 1.4em;
       }
-      .gallery-buttons {
+      .gallery-buttons, .services-buttons {
         flex-wrap: wrap;
       }
-      .gallery-counter {
+      .gallery-counter, .services-counter {
         margin: 10px 0;
         min-width: 100px;
       }
-      .gallery-slide img {
+      .gallery-slide img, .services-slide img {
         max-height: 400px;
       }
     }
@@ -648,11 +734,11 @@
         font-size: 1.4em;
         margin-bottom: 20px;
       }
-      .gallery-btn {
+      .gallery-btn, .services-btn {
         padding: 8px 15px;
         font-size: 0.9em;
       }
-      .gallery-slide img {
+      .gallery-slide img, .services-slide img {
         max-height: 300px;
       }
     }
@@ -687,42 +773,56 @@
     <span>Experience the Art of Pristine Cleaning — Tailored Solutions That Shine</span>
   </div>
   <section class="services" id="services">
-    <div style="flex: 1; min-width: 300px;">
-      <img src="https://raw.githubusercontent.com/bryan10001/image/main/IMG_0941.jpeg" alt="Cleaning services" loading="lazy">
-    </div>
-    <div style="flex: 1; min-width: 300px;">
-      <h2>Our Services</h2>
-      <div class="services-list">
-        <div class="service-card">
-          <i class="fas fa-broom service-img" aria-hidden="true"></i>
-          <h3>Post-Construction Cleaning</h3>
-          <p>Our comprehensive service removes dust, debris, and residues to deliver a spotless finish.</p>
+    <h2>Our Services</h2>
+    <div class="services-gallery">
+      <div class="services-wrapper">
+        <div class="services-slides" id="servicesSlides">
+          <div class="services-slide">
+            <img src="https://raw.githubusercontent.com/bryan10001/image/main/IMG_0941.jpeg" alt="Post-Construction Cleaning" loading="lazy">
+            <h3>Post-Construction Cleaning</h3>
+            <p>Our comprehensive service removes dust, debris, and residues to deliver a spotless finish.</p>
+          </div>
+          <div class="services-slide">
+            <img src="https://raw.githubusercontent.com/bryan10001/image/main/20260305_190030703_iOS.jpg" alt="Rough, Final, and Touch-Up Cleaning" loading="lazy">
+            <h3>Rough, Final, and Touch-Up Cleaning</h3>
+            <p>We handle all stages of cleanup, from initial rough removal to final touches for perfection.</p>
+          </div>
+          <div class="services-slide">
+            <img src="https://raw.githubusercontent.com/bryan10001/image/main/20260305_190119412_iOS.jpg" alt="Carpet Cleaning" loading="lazy">
+            <h3>Carpet Cleaning</h3>
+            <p>Deep cleaning and stain removal for carpets to restore them to like-new condition.</p>
+          </div>
+          <div class="services-slide">
+            <img src="https://raw.githubusercontent.com/bryan10001/image/main/20260308_190608309_iOS.heic" alt="Window Cleaning" loading="lazy">
+            <h3>Window Cleaning</h3>
+            <p>Streak-free cleaning for windows, ensuring crystal-clear views inside and out.</p>
+          </div>
+          <div class="services-slide">
+            <img src="https://raw.githubusercontent.com/bryan10001/image/main/20260308_190616862_iOS.heic" alt="Hard Floor Care" loading="lazy">
+            <h3>Hard Floor Care</h3>
+            <p>Polishing, sealing, and maintenance for hard surfaces like tile, wood, and concrete.</p>
+          </div>
+          <div class="services-slide">
+            <img src="https://raw.githubusercontent.com/bryan10001/image/main/Minimalist%20Cleaning%20Supplies%20Arrangement.png" alt="Specialized Debris Removal" loading="lazy">
+            <h3>Specialized Debris Removal</h3>
+            <p>Safe and efficient removal of construction debris, including hazardous materials if needed.</p>
+          </div>
         </div>
-        <div class="service-card">
-          <i class="fas fa-tools service-img" aria-hidden="true"></i>
-          <h3>Rough, Final, and Touch-Up Cleaning</h3>
-          <p>We handle all stages of cleanup, from initial rough removal to final touches for perfection.</p>
+      </div>
+      <div class="services-buttons">
+        <button class="services-btn prev-btn" data-gallery="servicesSlides">← Previous</button>
+        <div class="services-counter">
+          <span class="current-slide">1</span> / <span class="total-slides">6</span>
         </div>
-        <div class="service-card">
-          <i class="fas fa-vacuum service-img" aria-hidden="true"></i>
-          <h3>Carpet Cleaning</h3>
-          <p>Deep cleaning and stain removal for carpets to restore them to like-new condition.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-window-restore service-img" aria-hidden="true"></i>
-          <h3>Window Cleaning</h3>
-          <p>Streak-free cleaning for windows, ensuring crystal-clear views inside and out.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-mop service-img" aria-hidden="true"></i>
-          <h3>Hard Floor Care</h3>
-          <p>Polishing, sealing, and maintenance for hard surfaces like tile, wood, and concrete.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-trash service-img" aria-hidden="true"></i>
-          <h3>Specialized Debris Removal</h3>
-          <p>Safe and efficient removal of construction debris, including hazardous materials if needed.</p>
-        </div>
+        <button class="services-btn next-btn" data-gallery="servicesSlides">Next →</button>
+      </div>
+      <div class="services-dots" id="servicesDots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+        <span class="dot" data-slide="4"></span>
+        <span class="dot" data-slide="5"></span>
       </div>
     </div>
   </section>
@@ -748,10 +848,10 @@
   </section>
   <section class="portfolio" id="portfolio">
     <h2>Our Work</h2>
-   
+  
     <div class="project-section">
       <div class="project-title">Paris Baguette in McKinney</div>
-     
+    
       <div class="gallery-container">
         <div class="gallery-wrapper">
           <div class="gallery-slides" id="gallery1">
@@ -864,7 +964,7 @@
         });
       });
     });
-    // Gallery Carousel
+    // Gallery Carousel for Portfolio
     class Gallery {
       constructor(galleryId, dotsId) {
         this.gallery = document.getElementById(galleryId);
@@ -910,6 +1010,53 @@
       }
     }
     new Gallery('gallery1', 'dots1');
+
+    // Services Carousel (adapted from gallery)
+    class ServicesGallery {
+      constructor(galleryId, dotsId) {
+        this.gallery = document.getElementById(galleryId);
+        this.slides = this.gallery.querySelectorAll('.services-slide');
+        this.dotsContainer = document.getElementById(dotsId);
+        this.dots = this.dotsContainer.querySelectorAll('.dot');
+        this.currentSlide = 0;
+        this.totalSlides = this.slides.length;
+        this.init();
+      }
+      init() {
+        document.querySelector(`[data-gallery="${this.gallery.id}"].next-btn`).addEventListener('click', () => this.nextSlide());
+        document.querySelector(`[data-gallery="${this.gallery.id}"].prev-btn`).addEventListener('click', () => this.prevSlide());
+        this.dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => this.goToSlide(index));
+        });
+        this.updateCounter();
+      }
+      nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.updateGallery();
+      }
+      prevSlide() {
+        this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+        this.updateGallery();
+      }
+      goToSlide(index) {
+        this.currentSlide = index;
+        this.updateGallery();
+      }
+      updateGallery() {
+        const offset = -this.currentSlide * 100;
+        this.gallery.style.transform = `translateX(${offset}%)`;
+        this.dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === this.currentSlide);
+        });
+        this.updateCounter();
+      }
+      updateCounter() {
+        const counterContainer = this.gallery.closest('.services-gallery').querySelector('.services-counter');
+        const currentSpan = counterContainer.querySelector('.current-slide');
+        currentSpan.textContent = this.currentSlide + 1;
+      }
+    }
+    new ServicesGallery('servicesSlides', 'servicesDots');
   </script>
 </body>
 </html>
