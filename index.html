@@ -266,13 +266,12 @@
       position: relative;
       overflow: hidden;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtle shadow - remove this line if you want ZERO border effect */
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
-      box-sizing: border-box;
+      /* Removed padding and background-color → now fully transparent */
     }
     .gallery-slides {
       display: flex;
@@ -875,13 +874,8 @@
         this.init();
       }
       init() {
-        // Next button
         document.querySelector(`[data-gallery="${this.gallery.id}"].next-btn`).addEventListener('click', () => this.nextSlide());
-       
-        // Previous button
         document.querySelector(`[data-gallery="${this.gallery.id}"].prev-btn`).addEventListener('click', () => this.prevSlide());
-       
-        // Dots
         this.dots.forEach((dot, index) => {
           dot.addEventListener('click', () => this.goToSlide(index));
         });
@@ -913,7 +907,6 @@
         currentSpan.textContent = this.currentSlide + 1;
       }
     }
-    // Initialize all galleries
     new Gallery('gallery1', 'dots1');
   </script>
 </body>
